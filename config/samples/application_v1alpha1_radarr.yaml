@@ -1,0 +1,12 @@
+apiVersion: application.graytonward.com/v1alpha1
+kind: Radarr
+metadata:
+  labels:
+    app.kubernetes.io/name: radarr
+    app.kubernetes.io/instance: radarr-sample
+    app.kubernetes.io/part-of: servarr-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: servarr-operator
+  name: radarr-sample
+spec:
+  # TODO(user): Add fields here
