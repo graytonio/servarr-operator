@@ -1,0 +1,63 @@
+apiVersion: pirateship.graytonward.com.my.domain/v1alpha1
+kind: PirateShip
+metadata:
+  labels:
+    app.kubernetes.io/name: pirateship
+    app.kubernetes.io/instance: pirateship-sample
+    app.kubernetes.io/part-of: pirate-ship
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: pirate-ship
+  name: pirateship-sample
+spec:
+  radarr:
+    enabled: true
+    spec:
+      size: 1
+      db:
+        source: "external"
+        host: "127.0.0.1"
+        port: 5432
+        credentials:
+          username:
+            value: "postgres"
+          password:
+            value: "xH4vG9fmGr"
+  sonarr:
+    enabled: false
+    spec:
+      size: 1
+      db:
+        source: "external"
+        host: "127.0.0.1"
+        port: 5432
+        credentials:
+          username:
+            value: "postgres"
+          password:
+            value: "xH4vG9fmGr"
+  lidarr:
+    enabled: true
+    spec:
+      size: 1
+      db:
+        source: "external"
+        host: "127.0.0.1"
+        port: 5432
+        credentials:
+          username:
+            value: "postgres"
+          password:
+            value: "xH4vG9fmGr"
+  readarr:
+    enabled: true
+    spec:
+      size: 1
+      db:
+        source: "external"
+        host: "127.0.0.1"
+        port: 5432
+        credentials:
+          username:
+            value: "postgres"
+          password:
+            value: "xH4vG9fmGr"

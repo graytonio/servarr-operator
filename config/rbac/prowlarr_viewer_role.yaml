@@ -1,0 +1,27 @@
+# permissions for end users to view prowlarrs.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: prowlarr-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: pirate-ship
+    app.kubernetes.io/part-of: pirate-ship
+    app.kubernetes.io/managed-by: kustomize
+  name: prowlarr-viewer-role
+rules:
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - prowlarrs
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - prowlarrs/status
+  verbs:
+  - get

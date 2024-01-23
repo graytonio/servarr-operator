@@ -1,0 +1,21 @@
+apiVersion: pirateship.graytonward.com.my.domain/v1alpha1
+kind: Radarr
+metadata:
+  name: radarr-sample
+spec:
+  # TODO(user): edit the following value to ensure the number
+  # of Pods/Instances your Operand must have on cluster
+  size: 1
+
+  # TODO(user): edit the following value to ensure the container has the right port to be initialized
+  containerPort: 7878
+
+  db:
+    source: "external"
+    host: "127.0.0.1"
+    port: 5432
+    credentials:
+      username:
+        value: "postgres"
+      password:
+        value: "xH4vG9fmGr"

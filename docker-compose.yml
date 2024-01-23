@@ -1,0 +1,27 @@
+version: "3"
+services:
+  psql:
+    image: postgres:14
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_USER=admin
+    volumes:
+      - psql_data:/var/lib/postgresql/data
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Etc/UTC
+    volumes:
+      - radarr_data:/config
+    ports:
+      - 7878:7878
+    restart: unless-stopped
+
+volumes:
+  psql_data:
+  radarr_data:

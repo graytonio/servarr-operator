@@ -1,0 +1,163 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - apps
+  resources:
+  - deployments
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - ""
+  resources:
+  - events
+  verbs:
+  - create
+  - patch
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - pirateships
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - pirateships/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - pirateships/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - prowlarrs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - prowlarrs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - prowlarrs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - radarrs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - radarrs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - radarrs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - readarrs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - readarrs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - readarrs/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - sonarrs
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - sonarrs/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - sonarrs/status
+  verbs:
+  - get
+  - patch
+  - update

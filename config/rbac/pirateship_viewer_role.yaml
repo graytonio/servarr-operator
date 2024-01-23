@@ -1,0 +1,27 @@
+# permissions for end users to view pirateships.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: pirateship-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: pirate-ship
+    app.kubernetes.io/part-of: pirate-ship
+    app.kubernetes.io/managed-by: kustomize
+  name: pirateship-viewer-role
+rules:
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - pirateships
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - pirateship.graytonward.com.my.domain
+  resources:
+  - pirateships/status
+  verbs:
+  - get
