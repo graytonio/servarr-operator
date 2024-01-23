@@ -1,5 +1,8 @@
-# pirate-ship
-// TODO(user): Add simple overview of use/purpose
+# Servarr Operator
+
+## NOTE: NOT CURRENTLY OPERATIONAL
+
+K8S Operator to deploy and configure Servarr Applications
 
 ## Description
 // TODO(user): An in-depth paragraph about your project and overview of use
@@ -16,7 +19,7 @@
 **Build and push your image to the location specified by `IMG`:**
 
 ```sh
-make docker-build docker-push IMG=<some-registry>/pirate-ship:tag
+make docker-build docker-push IMG=<some-registry>/servarr-operator:tag
 ```
 
 **NOTE:** This image ought to be published in the personal registry you specified. 
@@ -32,7 +35,7 @@ make install
 **Deploy the Manager to the cluster with the image specified by `IMG`:**
 
 ```sh
-make deploy IMG=<some-registry>/pirate-ship:tag
+make deploy IMG=<some-registry>/servarr-operator:tag
 ```
 
 > **NOTE**: If you encounter RBAC errors, you may need to grant yourself cluster-admin 
@@ -88,4 +91,3 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
-
